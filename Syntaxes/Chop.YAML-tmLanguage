@@ -16,11 +16,15 @@ patterns:
 
 - comment: Binding Operators
   name: entity.name.function.chop
-  match: =>|:=|->|<>
+  match: '=>|:=|->|<>|\:'
 
 - comment: The \ keyword
   name: constant.other.chop
   match: \\
+
+- comment: The _ keyword
+  name: constant.other.chop
+  match: '\b_\b'
 
 - comment: Strings
   name: string.chop
@@ -47,7 +51,7 @@ patterns:
   name: keyword.control.chop
   match: module|uses|exports|match|with|cond|where|when
 
-- comment: Submodules
+- comment: Members
   name: variable.parameter.chop
   match: (?<=[a-zA-Z0-9_-])\.(?=[a-zA-Z_-])
 

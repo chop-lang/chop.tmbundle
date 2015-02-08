@@ -33,7 +33,7 @@
 			<key>comment</key>
 			<string>Binding Operators</string>
 			<key>match</key>
-			<string>=&gt;|:=|-&gt;|&lt;&gt;</string>
+			<string>=&gt;|:=|-&gt;|&lt;&gt;|\:</string>
 			<key>name</key>
 			<string>entity.name.function.chop</string>
 		</dict>
@@ -42,6 +42,14 @@
 			<string>The \ keyword</string>
 			<key>match</key>
 			<string>\\</string>
+			<key>name</key>
+			<string>constant.other.chop</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>The _ keyword</string>
+			<key>match</key>
+			<string>\b_\b</string>
 			<key>name</key>
 			<string>constant.other.chop</string>
 		</dict>
@@ -100,7 +108,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Submodules</string>
+			<string>Members</string>
 			<key>match</key>
 			<string>(?&lt;=[a-zA-Z0-9_-])\.(?=[a-zA-Z_-])</string>
 			<key>name</key>
