@@ -103,6 +103,16 @@
 			<key>name</key>
 			<string>storage.type.chop</string>
 		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\`</string>
+			<key>comment</key>
+			<string>Infix</string>
+			<key>end</key>
+			<string>\`</string>
+			<key>name</key>
+			<string>variable.parameter.chop</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>source.chop</string>
