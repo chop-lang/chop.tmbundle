@@ -38,22 +38,6 @@
 			<string>entity.name.function.chop</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>The \ keyword</string>
-			<key>match</key>
-			<string>\\</string>
-			<key>name</key>
-			<string>constant.other.chop</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>The _ keyword</string>
-			<key>match</key>
-			<string>\b_\b</string>
-			<key>name</key>
-			<string>constant.other.chop</string>
-		</dict>
-		<dict>
 			<key>begin</key>
 			<string>\"</string>
 			<key>comment</key>
@@ -75,34 +59,15 @@
 			<key>comment</key>
 			<string>Constants</string>
 			<key>match</key>
-			<string>True|False|Null</string>
+			<string>True|False|Null|\b_\b|\\</string>
 			<key>name</key>
 			<string>constant.character.chop</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.control.chop</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>constant.numeric.chop</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Contextual Keywords</string>
-			<key>match</key>
-			<string>(module)\s+[^\.]*?(uses|exports|extends)</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>Keywords</string>
 			<key>match</key>
-			<string>module|uses|exports|match|with|cond|where|when</string>
+			<string>uses|exports|extends|module|match|with|cond|where|when</string>
 			<key>name</key>
 			<string>keyword.control.chop</string>
 		</dict>

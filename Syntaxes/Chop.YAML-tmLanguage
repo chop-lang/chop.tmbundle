@@ -18,14 +18,6 @@ patterns:
   name: entity.name.function.chop
   match: '=>|:=|->|<>|\:'
 
-- comment: The \ keyword
-  name: constant.other.chop
-  match: \\
-
-- comment: The _ keyword
-  name: constant.other.chop
-  match: '\b_\b'
-
 - comment: Strings
   name: string.chop
   begin: \"
@@ -37,19 +29,19 @@ patterns:
 
 - comment: Constants
   name: constant.character.chop
-  match: True|False|Null
+  match: True|False|Null|\b_\b|\\
 
-- comment: Contextual Keywords
-  match: (module)\s+[^\.]*?(uses|exports|extends)
-  captures:
-    "1":
-      name: keyword.control.chop
-    "2":
-      name: constant.numeric.chop
+# - comment: Contextual Keywords
+#   match: '(module)\s+.*(uses|exports|extends)'
+#   captures:
+#     "1":
+#       name: keyword.control.chop
+#     "2":
+#       name: keyword.control.chop
 
 - comment: Keywords
   name: keyword.control.chop
-  match: module|uses|exports|match|with|cond|where|when
+  match: uses|exports|extends|module|match|with|cond|where|when
 
 - comment: Members
   name: variable.parameter.chop
