@@ -15,8 +15,8 @@ patterns:
   match: \#.*$
 
 - comment: Binding Operators
-  name: storage.type.chop
-  match: =>|:=|->
+  name: entity.name.function.chop
+  match: =>|:=|->|<>
 
 - comment: The \ keyword
   name: constant.other.chop
@@ -35,14 +35,30 @@ patterns:
   name: constant.character.chop
   match: True|False|Null
 
+- comment: Contextual Keywords
+  match: (module)\s+[^\.]*?(uses|exports|extends)
+  captures:
+    "1":
+      name: keyword.control.chop
+    "2":
+      name: constant.numeric.chop
+
 - comment: Keywords
   name: keyword.control.chop
   match: module|uses|exports|match|with|cond|where|when
+
+- comment: Submodules
+  name: variable.parameter.chop
+  match: (?<=[a-zA-Z0-9_-])\.(?=[a-zA-Z_-])
 
 - comment: Number
   name: constant.numeric.chop
   match: '\b\-?[0-9]+(\.[0-9]*)?\b'
 
 - comment: Binding
-  name: entity.name.function.chop
-  match: '[a-zA-Z_-][a-zA-Z0-9_-]*[a-zA-Z0-9_-](?=\s*:=)'
+  name: storage.type.chop
+  match: '[a-zA-Z_-][a-zA-Z0-9_-]+(?=\s*(:=|=>))'
+
+- comment: Lambdas Bindings
+  name: storage.type.chop
+  match: '[a-zA-Z_-]+(?=\s*[a-zA-Z0-9_-]\s*=>)'
